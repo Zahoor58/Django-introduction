@@ -8,8 +8,9 @@ class Book(models.Model):
     published=models.DateField(blank=True,null=True,default=None)
     cover=models.ImageField(upload_to='covers/', blank=True)
     is_published=models.BooleanField(default=False)
-    # STATUSES=(
-    #     (0,'Unknown'),
+    def __str__(self):
+        return self.title
+    #     (0,'Unknown'), 
     #     (1,'processed'),
     #     (2,'Paid')
     # )

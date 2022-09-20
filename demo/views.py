@@ -12,3 +12,6 @@ class  Another(View):
         output+=f"we have {book.title}  b ooks in with {book.id}\n"
     def get(self,request):
         return HttpResponse(self.output)
+def first_temp(request):
+    books=Book.objects.all()
+    return render(request, 'first_temp.html', {'books':books});
